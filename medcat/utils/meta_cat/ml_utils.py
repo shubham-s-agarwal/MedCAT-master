@@ -11,7 +11,7 @@ from torch import nn
 from scipy.special import softmax
 from medcat.config_meta_cat import ConfigMetaCAT
 from medcat.tokenizers.meta_cat_tokenizers import TokenizerWrapperBase
-from sklearn.metrics import classification_report, precision_recall_fscore_support, confusion_matrix
+from sklearn.metrics import classification_report, precision_recall_fscore_support, confusion_matrix, accuracy_score, f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.utils.class_weight import compute_class_weight
 from transformers import AdamW, get_linear_schedule_with_warmup
@@ -157,6 +157,9 @@ def print_report(epoch: int, running_loss: List, all_logits: List, y: Any, name:
         name (str): The name of the report. Defaults to Train.
     """
     if all_logits:
+        print("Epoch",epoch,' ',str)
+        print("Accuracy: ",accuracy_score(y, np.argmax(np.concatenate(all_logits, axis=0), axis=1)))
+        print("F1-score: ",f1_score(y, np.argmax(np.concatenate(all_logits, axis=0), axis=1),average='macro'))
         logger.info('Epoch: %d %s %s', epoch, "*" * 50, name)
         logger.info(classification_report(y, np.argmax(np.concatenate(all_logits, axis=0), axis=1)))
 
