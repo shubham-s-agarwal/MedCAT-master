@@ -87,6 +87,7 @@ def prepare_from_json(data: Dict,
                             cpos = cntx_left + min(0, ind - cntx_left)
                             cpos_new = [x - _start for x in ctoken_idx]
                             tkns = doc_text['input_ids'][_start:_end]
+                            tkns = doc_text['tokens'][_start:_end]
 
                             if replace_center is not None:
                                 if lowercase:

@@ -293,6 +293,9 @@ class MetaCAT(PipeRunner):
                 logger.info("For phase 1, model state has to be saved. Saving model...")
                 t_config['auto_save_model'] = True
 
+        if True:
+            return data
+
         report = train_model(self.model, data=data, config=self.config, save_dir_path=save_dir_path)
 
         # If autosave, then load the best model here
