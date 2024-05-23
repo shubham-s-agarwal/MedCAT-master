@@ -5,7 +5,7 @@ from sklearn.metrics import ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 
 phase_num = 0
-config_dict = {"general":{"category_name":"Experiencer","cntx_left":40,"cntx_right":40,"tokenizer_name":"bert-tokenizer","category_value2id":{"Family":1,"Other":0,"Patient":2}},"model":{"input_size":768,"hidden_size":200,"model_name":"bert","nclasses":2,"dropout":0.4,"model_freeze_layers":False,"phase_number":0,"category_undersample":"Other","num_layers":3},"train":{"nepochs":40,"auto_save_model":False,"batch_size":32,"lr":5e-4,"class_weights":[0.5,0.5],"metric":{"base":"macro avg","score":"f1-score"}}}
+config_dict = {"general":{"category_name":"Experiencer","cntx_left":40,"cntx_right":40,"tokenizer_name":"bert-tokenizer","category_value2id":{"Family":1,"Other":0,"Patient":2}},"model":{"input_size":768,"hidden_size":200,"model_name":"bert","nclasses":3,"dropout":0.4,"model_freeze_layers":False,"phase_number":0,"category_undersample":"Other","num_layers":3},"train":{"nepochs":40,"auto_save_model":False,"batch_size":32,"lr":5e-4,"class_weights":[0.5,0.5],"metric":{"base":"macro avg","score":"f1-score"}}}
 # config_dict = {"general":{"category_name":"Status","cntx_left":20,"cntx_right":15,"tokenizer_name":"bert-tokenizer","category_value2id":{"Other":1,"Confirmed":0}},"model":{"model_name":"bert","nclasses":2,"phase_number":phase_num,"category_undersample":"Other","num_layers":3},"train":{"nepochs":40,"auto_save_model":False,"metric":{"base":"macro avg","score":"f1-score"}}}
 config = ConfigMetaCAT()
 
