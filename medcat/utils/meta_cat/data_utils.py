@@ -86,6 +86,7 @@ def prepare_from_json(data: Dict,
 
                             cpos = cntx_left + min(0, ind - cntx_left)
                             cpos_new = [x - _start for x in ctoken_idx]
+                            cpos_new = " ".join(tkns[cpos_new[0]:cpos_new[-1]+1])
                             tkns = doc_text['input_ids'][_start:_end]
                             tkns = doc_text['tokens'][_start:_end]
 
