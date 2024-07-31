@@ -26,7 +26,6 @@ formatted_data = mc.train(json_files, save_dir_path="Dummy")
 with open("formatted_data_exp_2.txt",'w') as f:
   f.write(str(formatted_data))
   f.close()
-  print("File written")
 
 # print("\n\nWinner Report:",results)
 
