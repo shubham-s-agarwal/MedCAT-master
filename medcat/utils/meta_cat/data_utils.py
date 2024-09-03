@@ -217,7 +217,7 @@ def encode_category_values(data: Dict, existing_category_value2id: Optional[Dict
         if data[i][2] in category_value2id.values():
             label_data_[data[i][2]] = label_data_[data[i][2]] + 1
 
-    print("\nCategory values:",label_data_)
+    logger.info("\nCategory values:",label_data_)
     # Undersampling data
     if category_undersample is None or category_undersample == '':
         min_label = min(label_data_.values())
